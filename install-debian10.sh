@@ -21,27 +21,6 @@ if [ "$1" = "s" ];then
     input="y"
 fi
 
-if [ -z $input ]; then
-    read -r -p "Install FastGit.org front? [Y/n] " input
-fi    
-
-
-case $input in
-    [yY][eE][sS]|[yY])
-        echo "You selected install"
-        isInstallFront=true
-        ;;
-
-    [nN][oO]|[nN])
-        echo "You selected no install"
-        isInstallFront=false
-        ;;
-
-    *)
-        echo "Invalid input..."
-        exit 1
-        ;;
-esac
 
 if [ -z $input ]; then
     read -r -p "Install FastGit.xyz [Y/n] " input
@@ -85,7 +64,7 @@ chmod +r /var/lib/nginx/dhparam.pem
 echo "[I] Download confs"
 mkdir fastgit-tmp
 cd fastgit-tmp
-git clone https://github.com/FastGitORG/nginx-conf --depth=1
+git clone https://github.com/Quandong-Zhang/nginx-conf --depth=1
 
 echo "[I] Install confs"
 cd nginx-conf
@@ -107,16 +86,7 @@ else
     rm -f /etc/nginx/sites-enabled/hub.fastgit.xyz.conf
 fi
 
-echo "[I] Process FastGit.org index.html"
 
-if $isInstallFront; then
-    git clone "https://github.com/FastGitORG/www" /www/wwwroot/fgorg
-    rm -rf /www/wwwroot/fgorg/.git
-    rm -rf /www/wwwroot/fgorg/README.md
-    rm -rf /www/wwwroot/fgorg/LICENSE
-else
-    rm -f /etc/nginx/sites-enabled/fastgit.org.conf
-fi
 
 echo "[I] Clean tmp"
 cd ..
