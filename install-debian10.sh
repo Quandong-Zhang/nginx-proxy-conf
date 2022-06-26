@@ -64,7 +64,7 @@ chmod +r /var/lib/nginx/dhparam.pem
 echo "[I] Download confs"
 mkdir fastgit-tmp
 cd fastgit-tmp
-git clone https://github.com/Quandong-Zhang/nginx-conf --depth=1
+git clone https://github.com/Quandong-Zhang/nginx-proxy-conf --depth=1
 
 echo "[I] Install confs"
 cd nginx-conf
