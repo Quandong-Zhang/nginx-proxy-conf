@@ -16,4 +16,5 @@ But we have no guarantee that the script will work properly.
 ```bash
 wget https://raw.githubusercontent.com/FastGitORG/nginx-conf/master/install-debian10.sh
 sudo bash install-debian10.sh
+
 ```
