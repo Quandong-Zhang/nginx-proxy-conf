@@ -67,7 +67,7 @@ cd fastgit-tmp
 git clone https://github.com/Quandong-Zhang/nginx-proxy-conf --depth=1
 
 echo "[I] Install confs"
-cd nginx-conf
+cd nginx-proxy-conf
 
 cp *.conf /etc/nginx/sites-enabled
 mv /etc/nginx/sites-enabled/anti-floc.conf /etc/nginx/snippets/anti-floc.conf
@@ -90,7 +90,7 @@ fi
 
 echo "[I] Clean tmp"
 cd ..
-rm -fR nginx-conf
+rm -fR nginx-proxy-conf
 cd ..
 rm -fR fastgit-tmp
 
